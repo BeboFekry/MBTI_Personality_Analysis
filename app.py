@@ -1276,7 +1276,7 @@ def get_info():
             f"{i+1}\. {questions[i]}",
             ["Yes", "No"], index=None)
         if choice ==None:
-            st.write("select a choice
+            st.write("select a choice")
         else:
             if choice == "Yes":
                 l[ctr].append(1)
