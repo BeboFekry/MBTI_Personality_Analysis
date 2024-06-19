@@ -1275,13 +1275,12 @@ def get_info():
         choice = st.radio(
             f"{i+1}\. {questions[i]}",
             ["Yes", "No"],index=None)
-        if choice not None:
-            if choice == "Yes":
-                l[ctr].append(1)
-            else:
-                l[ctr].append(0)
-            if i == 4 or i == 9 or i == 14 or i == 19:
-                ctr += 1
+        if choice == "Yes":
+            l[ctr].append(1)
+        else:
+            l[ctr].append(0)
+        if i == 4 or i == 9 or i == 14 or i == 19:
+            ctr += 1
     return l
 # personality analysis
 def scan(a):
