@@ -1284,7 +1284,7 @@ def get_info():
                 ctr += 1
         else:
             st.warning('Please select an option.')
-        return l
+    return l
 # personality analysis
 def scan(a):
     s = ""
