@@ -1275,7 +1275,7 @@ def get_info():
         choice = st.radio(
             f"{i+1}\. {questions[i]}",
             ["Yes", "No"],index=None)
-        if choice not is None:
+        if choice not None:
             if choice == "Yes":
                 l[ctr].append(1)
             else:
