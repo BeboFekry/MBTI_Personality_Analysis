@@ -1272,18 +1272,13 @@ def get_info():
     l = [ [],[],[],[] ]
     ctr = 0
     for i in range(20):
-        choice = st.radio(
-            f"{i+1}\. {questions[i]}",
-            ["Yes", "No"], index=None)
-        if choice is None:
-            st.write("Please select an option!")
+        choice = st.radio( f"{i+1}\. {questions[i]}", ["Yes", "No"], index=None)
+        if choice == "Yes":
+            l[ctr].append(1)
         else:
-            if choice == "Yes":
-                l[ctr].append(1)
-            else:
-                l[ctr].append(0)
-            if i == 4 or i == 9 or i == 14 or i == 19:
-                ctr += 1
+            l[ctr].append(0)
+        if i == 4 or i == 9 or i == 14 or i == 19:
+            ctr += 1
     return l
 # personality analysis
 def scan(a):
