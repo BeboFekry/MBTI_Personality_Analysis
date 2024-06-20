@@ -1274,25 +1274,25 @@ def get_info():
     for i in range(20):
         choice = st.radio(
             f"{i+1}\. {questions[i]}",
-            ["Yes", "No"])
-        if choice == "Yes":
-            l[ctr].append(1)
+            ["Yes", "No"], index=None)
+        if choice is None:
+            st.write("Please select an option!")
         else:
-            l[ctr].append(0)
-        if i == 4 or i == 9 or i == 14 or i == 19:
-            ctr += 1
+            if choice == "Yes":
+                l[ctr].append(1)
+            else:
+                l[ctr].append(0)
+            if i == 4 or i == 9 or i == 14 or i == 19:
+                ctr += 1
     return l
 # personality analysis
 def scan(a):
     s = ""
-    if len(a)==4 and len(a[0])==5:
-        for i in range(4):
-            if a[i].count(1) >= 3:
-                s = s + c[i][0]
-            else:
-                s = s + c[i][1]
-    else:
-        s = "input shape error, it must be with the shape (4,5)!"
+    for i in range(4):
+        if a[i].count(1) >= 3:
+            s = s + c[i][0]
+        else:
+            s = s + c[i][1]
     return s
 
 l = get_info()
